@@ -8,4 +8,4 @@ class Conta(object):
         self.__numero = 123
         self.nome = 'Jorge'
         self.saldo = 500
-        sel.limite = 1000
+        self.limite = 1000
