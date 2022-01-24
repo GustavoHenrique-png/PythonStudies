@@ -21,3 +21,4 @@ else:
     print('Não feito')
 print('texto'if condicao else naoCondicao)
 
+#Esetição

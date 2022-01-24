@@ -1,3 +1,5 @@
+import random
+
 print(45*'=')
 print('=========Seja bem vindo ao meu jogo!=========')
 print(45*'=')
@@ -5,7 +7,10 @@ print('\n')
 print('Temos aqui um número escondido, caso advinhe qual é, avançará para o próximo nível, Boa sorte Jogador!\n')
 
 #Declaração da variável que seta o número resposta
-numero = 43
+#numero = 43
+
+#Declaração da variavável que seta o numero aleatóriamente
+numero = random.random()*50
 
 #Declaração da variável que define quantas tentativas ainda restam pro usuário
 numeroDeTentativas = 3
@@ -33,6 +38,7 @@ def verificaNum(numero):
         elif numero < resposta:
             print('tente chutar um pouco mais baixo\n')
 
+verificaNum(numero)
 
 #Laço que permite novas tentativas
 # while numeroDeRodadas <= numeroDeTentativas:
