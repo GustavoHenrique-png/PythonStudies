@@ -21,4 +21,11 @@ else:
     print('Não feito')
 print('texto'if condicao else naoCondicao)
 
-#Esetição
+#Estruturas de repetição são usadas quando precisa-se que um bloco de código seja executado mais de uma vez
+#for é usado quando se quer iterar sobre um bloco de código um número determinado de vezes
+for numeroDeRodadas in range(1,10):
+    print('Faça algo')
+
+#while é usado quando queremos que o bloco de código seja repetido até que uma condição seja satifeita
+while numeroDeRodadas <= numeroDeTentativas:
+    print('Faça algo')
