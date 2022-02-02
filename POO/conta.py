@@ -1,4 +1,7 @@
 #Criação da classe
+from mailbox import NotEmptyError
+
+
 class Conta(object):
     #Contrutor do objeto
     #Uma classe, uma responsabilidade
@@ -24,6 +27,29 @@ class Conta(object):
         self.saque(valor)
         contaDestino.deposito(valor)
 
+    #Getter(metodo que pega o limite)
+    #Sempre tem um return e nunca altera nada, recebe como paramentro apenas o self
+    def getLimite(self):
+        return self.__limite
+
+    #Setter(metodo que define o nome)
+    #Altera o valor de um atributo em questão
+    def setLimite(self,__limite):
+        self.__limite = __limite
+    
+    #@property, define uma propiedade em python(executa um metodo sem usar os parenteses)
+    #substitui os getters?
+    @property
+    def nome(self):
+        return self.__nome
+    
+    #Define que esse metodo será o setter
+    @nome.setter
+    def nome(self, nome):
+        self.__nome = nome
+    #conta.nome = 'Matheus'
+
+#Chamando a função que cria a conta
 conta = Conta(123,'horge',500,1000)
 conta2 = Conta(321,'teo',20,1000)
 
@@ -31,3 +57,4 @@ conta2 = Conta(321,'teo',20,1000)
 print(conta.extrato())
 
 conta.tranferencia(100,conta2)
+conta.getNome()
