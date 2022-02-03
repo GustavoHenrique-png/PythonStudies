@@ -14,6 +14,8 @@ class Conta(object):
         self.__nome = nome
         self.__saldo = saldo
         self.__limite = limite
+
+
     def extrato(self):
         print('O saldo do: {} é de: ${}'.format(self.__nome,self.__saldo))
 
@@ -21,11 +23,18 @@ class Conta(object):
         self.__saldo += valor
 
     def saque(self, valor):
-        self.__saldo -= valor
+        if self.__podeSacar(valor):
+            self.__saldo -= valor
+        else:
+            print('limite ultrapassado')
 
     def tranferencia(self, valor, contaDestino):
         self.saque(valor)
         contaDestino.deposito(valor)
+
+    def __podeSacar(self,valorDoSaque):
+        return valorDoSaque <=(self.__saldo + self.__limite)
+
 
     #Getter(metodo que pega o limite)
     #Sempre tem um return e nunca altera nada, recebe como paramentro apenas o self
@@ -48,6 +57,11 @@ class Conta(object):
     def nome(self, nome):
         self.__nome = nome
     #conta.nome = 'Matheus'
+
+    #Metodo estático para coisas fixas
+    @staticmethod
+    def codigoDoBanco():
+        return {'Banco Do Brasil':'0001','Caixa Ecônomica Federal':'1251', 'Santander':'049'}
 
 #Chamando a função que cria a conta
 conta = Conta(123,'horge',500,1000)
