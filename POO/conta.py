@@ -1,7 +1,4 @@
 #Criação da classe
-from mailbox import NotEmptyError
-
-
 class Conta(object):
     #Contrutor do objeto
     #Uma classe, uma responsabilidade
